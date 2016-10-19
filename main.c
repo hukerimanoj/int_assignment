@@ -24,90 +24,6 @@ static int readNat(int *p) {
 	return (*p = r);
 }
 
-//static int getInt() {
-//	static char buf[NDIGITS];
-//	static int r = 0;
-//
-//	if (fgets(buf, NDIGITS, stdin) == NULL)
-//		return -1;
-//	if ((r = atoi(buf)) < 0)
-//		return -1;
-//	if (r == 0 && *buf != '0')
-//		return -1;
-//	
-//	return r;
-//}
-//
-//static char *readFilename() {
-//	static char buf[BUFSIZ];
-//
-//	int i;
-//	char c;
-//	for (i = 0; i < BUFSIZ && ((c = (char)fgetc(stdin))!='\n' && c!='\0' && c!=EOF); i++) {
-//		*(buf+i) = c;
-//	}
-//	if (i < BUFSIZ-1) {
-//		*(buf+i) = '\0';
-//	} else {
-//		printf("Input buffer overflows by the file_name.\n");
-//		return NULL;
-//	}
-//
-//	return buf;
-//}
-
-//static int read2Nats(int *p) {
-//	static char buf[2*NDIGITS];
-//	static int a = 0;
-//	static int b = 0;
-//
-//	if (fgets(buf, 2*NDIGITS, stdin) == NULL)
-//		return -1;
-//	char *sp = buf;
-//	char *endp = buf;
-//	if ((a = (int)strtol(sp, &endp, 10)) == 0)
-//		return -1;
-//	sp = endp;
-//	if ((b = (int)strtol(sp, &endp, 10)) == 0)
-//		return -1;
-//	// both a and b are non-zero
-//	if (a < 0 || b < 0)
-//		return -1;
-//	// both a and b are positive
-//	*p++ = a;
-//	*p = b;
-//	
-//	return 0;
-//}
-
-//static int getaline(char *line, int max, FILE *in) {
-//	if (fgets(line, max, in) == NULL)
-//		return 0;
-//	else
-//		return strlen(line);
-//}
-
-//static int linetoints(char *sp, int *ip) {
-//	char *endp;
-//	int i;
-//	for (i = 0; i < BUFSIZ; i++, sp=endp, ip++) {
-//		if ((*ip = (int)strtol(sp, &endp, 10))==0 && endp==sp) {//nothing is read
-//			//printf("i: %d sp: %s endp: %s\n", i, sp, endp);
-//			goto END;
-//		}
-//		//printf("%d ", *ip);
-//	}
-//END:
-//	return i;
-//}
-
-//static int intcpy(int *dest, const int *src, int n) {
-//	int i;
-//	for (i = 0; i < n; i++) {
-//		*dest++ = *src++;
-//	}
-//	return i;
-//}
 
 int main() {
 	char 	line[BUFSIZ];
@@ -187,15 +103,6 @@ int main() {
 				printf("There is no data currently.\nPlease use option 1 \n");
 				break;
 			}
-			//printf("%s\n", prompt3);
-			//if (read2Nats(fromto) < 0 || fromto[0] > g->size || fromto[1] > g->size) {
-			//	printf("Invalid input. Please follow the format:\n\tvalid_src_router_id valid_dest_router_id.\n");
-			//	break;
-			//}
-			//// fromto[2] is valid
-			//r = makerouter(fromto[0], g->size);
-			//dijkstra(g, r->id, r->varray);
-			//printpath(r, fromto[1]);
 			{
 				int r1,r2;
 				printf("\n\nEnter Source Router\n");
